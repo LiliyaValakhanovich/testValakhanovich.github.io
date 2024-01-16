@@ -68,20 +68,16 @@
   }
 }
 .conteiner .header__info-left-burger {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 24px;
   height: 24px;
-  gap: 5.62px;
-  visibility: hidden;
+  display: none;
 }
 .conteiner .header__info-left-burger:hover {
   cursor: pointer;
 }
 @media (max-width: 1024px) {
   .conteiner .header__info-left-burger {
-    visibility: visible;
+    display: block;
   }
 }
 .conteiner .header__info-left-burger .burger-line {

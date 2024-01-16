@@ -57,18 +57,14 @@ $description-color: #979797;
           gap:17.8px;
         }
         &-burger{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
           width: 24px;
           height: 24px;
-          gap: 5.62px;
-          visibility: hidden;
+          display: none;
           &:hover{
             cursor: pointer;
           }
           @media (max-width:1024px) {
-            visibility: visible;
+            display: block;
           }
           @media (max-width:320px) {
             
