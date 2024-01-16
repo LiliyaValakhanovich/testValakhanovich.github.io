@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link href="css/index.css" rel="stylesheet">
+  <script defer src="index.js"></script>
+  <script defer src="dom.js"></script>
+</head>
+<body>
+  <div class="conteiner">
+      <header class="header">
+        <div class="header__info">
+          <div class="header__info-left">
+            <div class="header__info-left-burger" onclick="handleClick()">
+              <div class="burger-line"></div>
+              <div class="burger-line"></div>
+              <div class="burger-line"></div>
+            </div>
+            <a class="header__info-left__logo" href="#begin">ЛОГОТИП</a>
+            <a class="header__info-left__phone" href="tel:88007775050">8 800 777 50 50</a>
+            <form class="header__info-left__search">
+              <img class="search-image" src="images/search.svg" alt="loupe">
+              <input class="form-control" type="search" name="search" placeholder="Поиск товаров">
+            </form>
+            <img class="item-image" src="images/basket.svg" alt="basket">
+          </div>
+
+          <div class="header__info-right">
+            <a class="delivery" href="#">Доставка и оплата</a> 
+          </div>
+        </div>
+
+        <nav class="header__menu__navigation">
+          <ul class="header__menu__navigation__list-left">
+            <li class="header__menu__navigation__list-left__item">
+              <a class="item-link">мобильные телефоны</a>
+            </li>
+            <li class="header__menu__navigation__list-left__item">
+              <a class="item-link">планшеты</a>
+            </li>
+            <li class="header__menu__navigation__list-left__item">
+              <a class="item-link">фототехника</a>
+            </li>
+            <li class="header__menu__navigation__list-left__item">
+              <a class="item-link">ноутбуки</a>
+            </li>
+            <li class="header__menu__navigation__list-left__item">
+              <a class="item-link">телевизоры</a>
+            </li>
+          </ul>
+
+          <ul class="header__menu__navigation__list-right">
+            <li class="header__menu__navigation__list-right__item">
+              <img class="item-image" src="images/basket.svg" alt="basket">
+              <a class="item-link">корзина</a>
+            </li>
+          </ul>
+          
+        </nav>
+
+        <div class="header__burger-menu">
+          <ul class="header__burger-menu__list">
+            <li class="header__burger-menu__list__item">
+              <a class="item-link">мобильные телефоны</a>
+            </li>
+            <li class="header__burger-menu__list__item">
+              <a class="item-link">планшеты</a>
+            </li>
+            <li class="header__burger-menu__list__item">
+              <a class="item-link">фототехника</a>
+            </li>
+            <li class="header__burger-menu__list__item">
+              <a class="item-link">ноутбуки</a>
+            </li>
+            <li class="header__burger-menu__list__item">
+              <a class="item-link">телевизоры</a>
+            </li>
+          </ul>
+        </div>
+
+      </header>
+
+      <main class="main">
+        <div class="main__filters">
+          <div class="main__filters-logotype">
+            <p class="logotype-title">Любого логотипа</p>
+            <div class="caret" onclick="openDropDown()">
+              <img class="caret-image" src="images/caret.svg" alt="caret">
+            </div>
+            <div class="drop-down-logotype">
+              <ul class="drop-down-logotype__list">
+                <li class="drop-down-logotype__list__item">Компакт-камера</li>
+                <li class="drop-down-logotype__list__item">Беззеркальная</li>
+                <li class="drop-down-logotype__list__item">Зеркальная</li>
+                <li class="drop-down-logotype__list__item">Среднеформатная</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="main__filters-brand">
+            <p class="brand-title">Любого бренда</p>
+            <div class="caret" onclick="openBrand()">
+              <img class="caret-image" src="images/caret.svg" alt="caret">
+            </div>
+            <div class="drop-down-brand">
+              <ul class="drop-down-brand__list">
+                <li class="drop-down-brand__list__item">Canon</li>
+                <li class="drop-down-brand__list__item">Nicon</li>
+                <li class="drop-down-brand__list__item">Sony</li>
+                <li class="drop-down-brand__list__item">Fujifilm</li>
+                <li class="drop-down-brand__list__item">Samsung</li>
+                <li class="drop-down-brand__list__item">Olympus</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="main__filters-title-price">по цене</div>
+
+          <div class="main__filters-price">
+            <div class="price-box">
+              <input class="start-price" type="text" placeholder="от     500 000">
+              <input class="finish-price" type="text" placeholder="до 25 000 000">
+            </div>
+          </div>
+
+          <div class="main__filters-title-money">рублей</div>
+        </div>
+
+        <div class="main__filters-small">
+          <div class="main__filters-small__title">фотоотчеты</div>
+          <img class="main__filters-small__image" onclick="appearModal()" src="images/filters.svg" alt="filters">
+
+          <div class="main__filters-small__modal">
+            <div class="close" onclick="closeModal()"><img src="images/close.svg" alt="close"></div>
+            <div class="modal-content">
+              <div class="modal-content-logotype">
+                <p class="logotype-title">Любого логотипа</p>
+                <div class="caret">
+                  <img class="caret-image" src="images/caret.svg" alt="caret">
+                </div>
+              </div>
+    
+              <div class="modal-content-brand">
+                <p class="brand-title">Любого логотипа</p>
+                <div class="caret">
+                  <img class="caret-image" src="images/caret.svg" alt="caret">
+                </div>
+              </div>
+    
+              <div class="modal-content-price">
+                  <input class="start-price" type="text" placeholder="от     500 000">
+                  <input class="finish-price" type="text" placeholder="до 25 000 000">
+              </div>
+
+              <button class="modal-content-btn">ПРИМЕНИТЬ</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="content" class="main__content"></div>
+      </main>
+  </div>
+</body>
+</html>

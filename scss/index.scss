@@ -1,0 +1,778 @@
+$color: #265C9A;
+$text-color: #FFFFFF;
+$line-color: #517DAE;
+$dark-color: #1F497B;
+$text-hover: #FBFF3D;
+$border-color: #D0D0D0;
+$main-text: #484848;
+$title-color:#333333;
+$description-color: #979797;
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.conteiner{
+  max-width: 1300px;
+  margin: 0 auto;
+  @media (max-width: 1024px) {
+    max-width: 1024px;
+  }
+  @media (max-width: 768px) {
+    max-width: 768px;
+  }
+  @media (max-width: 320px) {
+    max-width: 320px;
+  }
+  .header{
+    width:100%;
+    height: 119px;
+    @media (max-width:1024px) {
+      height: 72px;
+    }
+    &__info{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $color;
+      height: 73px;
+      padding-left: 86px;
+      padding-right: 86px;
+      @media (max-width:1024px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      &-left{
+        display: flex;
+        align-items: center;
+        gap: 86px;
+        @media (max-width:1024px) {
+          gap:41px;
+        }
+        @media (max-width:768px) {
+          gap:37px;
+        }
+        @media (max-width:320px) {
+          gap:17.8px;
+        }
+        &-burger{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          gap: 5.62px;
+          visibility: hidden;
+          &:hover{
+            cursor: pointer;
+          }
+          @media (max-width:1024px) {
+            visibility: visible;
+          }
+          @media (max-width:320px) {
+            
+          }
+          .burger-line{
+            border: none;
+            border-top: 1.88px solid $text-color;
+          }
+        }
+        &__logo{
+          font-family: "PT Sans";
+          font-size: 28px;
+          font-weight: 700;
+          @media (max-width:320px) {
+            margin-right: 44.2px;
+          }
+        }
+        &__phone{
+          font-family: "PT Sans";
+          font-size: 19px;
+          font-weight: 400;
+          @media (max-width:1024px) {
+            display: none;
+          }
+        }
+        &__logo,
+        &__phone{
+          text-decoration: none;
+          color: $text-color;
+        }
+        &__search{
+          width: 281px;
+          height: 22px;
+          border-bottom: 1px solid $line-color;
+          @media (max-width:1024px) {
+            width:697px;
+          }
+          @media (max-width:768px) {
+            width:452px;
+          }
+          @media (max-width:320px) {
+            width:16.2px;
+            height: 16.2px;
+            border-bottom: none;
+          }
+          .search-image{
+            width: 13px;
+            height: 13px;
+            @media (max-width:320px) {
+              width:16.2px;
+              height: 16.2px;
+            }
+          }
+          .form-control{
+            border: none;
+            background-color: $color;
+            font-family: "PT Sans";
+            font-size: 16px;
+            font-weight: 400;
+            @media (max-width:320px) {
+              display: none;;
+            }
+          }
+          input[type="search"]::-webkit-input-placeholder {
+            color: $text-color;
+          } 
+        }
+        .item-image{
+          width: 17px;
+          height: 16px;
+          visibility: hidden;
+          @media (max-width:1024px) {
+            visibility: visible;
+          }
+          @media (max-width:320px) {
+            width: 19px;
+            height: 18px;
+          }
+        }
+      }
+      &-right{
+        &:hover{
+          .delivery{
+            color:$text-hover
+          }
+        }
+        .delivery{
+          font-family: "PT Sans";
+          font-size: 16px;
+          font-weight: 400;
+          color:$text-color;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+          text-decoration-thickness: 1px;
+          @media (max-width:1024px) {
+            display: none;
+          }
+        }
+      }
+    }
+    &__menu__navigation{
+      background-color: $dark-color;
+      height: 46px;
+      padding: 13px 86px 12px 86px;
+      display: flex;
+      justify-content: space-between;
+      @media (max-width:1024px) {
+        display: none;
+        //height: 72px;
+      }
+      &__list-left{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        gap: 39px;
+        &__item{
+          height: 21px;
+          color: $text-color;
+          text-transform: uppercase;
+          font-family: "PT Sans";
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 20.7px;
+          &:hover{
+            color: $text-hover;
+          }
+          .item-link{
+            cursor: pointer;
+          }
+        }
+      }
+      &__list-right{
+        list-style-type: none;
+        &__item{
+          display: flex;
+          gap: 9px;
+          height: 21px;
+          color: $text-color;
+          text-transform: uppercase;
+          font-family: "PT Sans";
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20.7px;
+          cursor: pointer;
+          &:hover{
+            color: $text-hover;
+            .item-image{
+              filter: brightness(0) saturate(100%) invert(82%) sepia(12%) saturate(2138%) hue-rotate(15deg) brightness(115%) contrast(109%);
+            }
+          }
+          .item-image{
+            width: 17px;
+            height: 16px;
+          }
+        }
+      }
+    }
+    .menu-visible{
+      visibility: visible;
+    }
+    &__burger-menu{
+      width: 100%;
+      position: absolute;
+      height: 217px;
+      background-color: $color;
+      padding-left: 20px;
+      padding-right: 20px;
+      visibility: hidden;
+      &__list{
+        list-style-type: none;
+        &__item{
+          height: 40px;
+          padding-top: 9px;
+          padding-left: 16px;
+          &:hover{
+            background-color: #618CBF;
+            cursor: pointer;
+          }
+          .item-link{
+            color: $text-color;
+            font-family: "PT Sans";
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+  .main{
+    width: 100%;
+    &__filters{
+      padding: 25px 86px 23px 86px;
+      display: flex;
+      @media (max-width:1024px) {
+        display: none;
+      }
+      &-logotype {
+        width:264px;
+        height: 48px;
+        padding: 14px 17px 13px 17px;
+        margin-right: 14px;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid $border-color;
+        position: relative;
+        &:hover{
+          cursor: pointer;
+        }
+        .logotype-title{
+          font-family: "PT Sans";
+          font-size: 16px;
+          font-weight: 400;
+          color: $main-text;
+        }
+        .drop-down-logotype{
+          width: 264px;
+          background-color: $text-color;
+          z-index: 2;
+          position: absolute;
+          top:47px;
+          border: 1px solid $border-color;
+          left: 0;
+          display: none;
+          .drop-down-logotype__list{
+            list-style-type: none;
+            padding-top: 13px;
+            &__item{
+              width: 262px;
+              height: 35px;
+              padding-left: 16px;
+              padding-top: 7px;
+              color: $main-text;
+              font-family: "PT Sans";
+              font-size: 16px;
+              font-weight: 400;
+              &:hover{
+                background-color: #E8EEFF;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      &-brand {
+        width:264px;
+        height: 48px;
+        padding: 14px 17px 13px 17px;
+        margin-right: 27px;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid $border-color;
+        position: relative;
+        &:hover{
+          cursor: pointer;
+        }
+        .brand-title{
+          font-family: "PT Sans";
+          font-size: 16px;
+          font-weight: 400;
+          color: $main-text;
+        }
+        .drop-down-brand{
+          display:none;
+          width: 264px;
+          background-color: $text-color;
+          z-index: 2;
+          position: absolute;
+          top:47px;
+          border: 1px solid $border-color;
+          left: 0;
+          .drop-down-brand__list{
+            list-style-type: none;
+            padding-top: 13px;
+            &__item{
+              width: 262px;
+              height: 35px;
+              padding-left: 16px;
+              padding-top: 7px;
+              color: $main-text;
+              font-family: "PT Sans";
+              font-size: 16px;
+              font-weight: 400;
+              &:hover{
+                background-color: #E8EEFF;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+      &-title-price {
+        display: flex;
+        align-items: center;
+        margin-right: 14px;
+        text-transform: uppercase;
+        font-family: "PT Sans";
+        font-size: 16px;
+        font-weight: 400;
+        color: $main-text;
+      }
+      &-price {
+        width: 265px;
+        height: 48px;
+        margin-right: 9px;
+        .price-box {
+          display: flex;
+          .start-price,
+          .finish-price {
+            width: 132.5px;
+            height: 48px;
+            padding-left: 11px;
+          }
+          input[type="text"]::-webkit-input-placeholder {
+            color: $main-text;
+            font-family: "PT Sans";
+            font-weight: 700;
+            font-size: 16px;
+          }
+        }
+      }
+      &-title-money{
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        font-family: "PT Sans";
+        font-size: 16px;
+        font-weight: 400;
+        color:$main-text;
+      }
+    }
+    &__filters-small{
+      width:100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 20px 14px 20px;
+      visibility: hidden;
+      @media (max-width:1024px) {
+        visibility: visible;
+      }
+      @media (max-width:320px) {
+        padding: 13px 20px 25px 20px;
+      }
+      &__title{
+        font-family: 'PT Sans';
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      &__image{
+        width: 22px;
+        height: 22px;
+      }
+      &__modal{
+        display: none;
+        background-color: rgba(0, 0, 0, 0.7);
+        position:absolute;
+        top:0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        .close{
+          width: 19px;
+          height: 19px;
+          position: fixed;
+          top:119px;
+          left:281px;
+        }
+        .modal-content{
+          width: 280px;
+          height: 356px;
+          background-color: $text-color;
+          padding: 21px 18px 19px 18px;
+          display: grid;
+          position: fixed;
+          top:146px;
+          left:20px;
+          &-logotype,
+          &-brand {
+            width: 244px;
+            height: 48px;
+            padding: 13px 10px 14px 10px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid $border-color;
+            &-title{
+              font-family: "PT Sans";
+              font-size: 16px;
+              font-weight: 400;
+              color: $main-text;
+            }
+          }
+          &-price{
+            width: 244px;
+            height: 115px;
+            display: flex;
+            flex-direction: column;
+            gap: 19px;
+            .start-price,
+            .finish-price {
+              width: 244px;
+              height: 48px;
+              padding-left: 11px;
+              border:1px solid $border-color;
+            }
+            input[type="text"]::-webkit-input-placeholder {
+              color: $main-text;
+              font-family: "PT Sans";
+              font-weight: 700;
+              font-size: 16px;
+            }
+          }
+          &-btn{
+            width: 244px;
+            height: 48px;
+            background-color: #FF3D3D;
+            color:$text-color;
+            text-align: center;
+            border:none;
+            &:hover{
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    &__content{
+      padding: 25px 86px 23px 86px;
+        display: grid;
+        grid-template-columns: repeat(4, 282px);
+        grid-gap: 0;
+        width: 100%;
+        flex-wrap: wrap;
+        @media (max-width:1024px) {
+          padding: 0 20px 39px 20px;
+          grid-template-columns: repeat(3, 328px);
+          grid-gap:0;
+        }
+        @media (max-width:768px) {
+          grid-template-columns: repeat(2, 364px);
+        }
+        @media (max-width:320px) {
+          grid-template-columns: repeat(1, 280px);
+        }
+        .card { 
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width:282px;
+          height: 358px;
+          border:1px solid $border-color;
+          padding: 21px 20px 14px;
+          &:hover{
+            background-color: #E8EEFF;
+            border:1px solid #8EACFC;
+          }
+          @media (max-width:1024px) {
+            width: 328px;
+            height: 359px;
+            padding: 16px 16px 19px 16px;
+          }
+          @media (max-width:768px) {
+            width: 364px;
+            height: 364px;
+            padding: 17px 24px;
+          }
+          @media (max-width:320px) {
+            width: 280px;
+            height: 381px;
+            padding: 22px 17.5px 16px 18px;
+          }
+          &:first-child{
+            width:564px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: start;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            @media (max-width:1024px) {
+              width: 656px;
+              height: 359px;
+              padding:31px 17px 19px 16px;
+            }
+            @media (max-width:768px) {
+              width: 728px;
+              height: 364px;
+              padding: 27px 24px 16px 21px;
+            }
+            @media (max-width:320px) {
+              width: 280px;
+              height: 588px;
+              padding: 18px 18px 16px 18px;
+              flex-direction: column;
+              grid-column-end: 2;
+            }
+            &:hover{
+              background-color: #FFF1F1;
+              border: 1px solid #FF3D3D;
+            }
+            .card-image{
+              display: flex;
+              width: 250px;
+              height: 250px;
+              @media (max-width:1024px) {
+                width: 297px;
+                height: 297px;
+              }
+              @media (max-width:768px) {
+                width: 318px;
+                height: 318px;
+              }
+              @media (max-width:320px) {
+                width: 244px;
+                height: 244px;
+                //display: grid;
+              }
+              &-photo{
+                @media (max-width:320px) {
+                  width: 244px;
+                  height: 244px;
+                }
+              }
+            }
+            .card-box{
+              width:282px;
+              @media (max-width:1024px) {
+                width: 300px;
+              }
+              @media (max-width:768px) {
+                width: 326px;
+              }
+              @media (max-width:320px) {
+                width: 244px;
+              }
+              .card-body{
+                &__title{
+                  font-family: "PT Sans";
+                  font-size: 20px;
+                  font-weight: 400;
+                  text-transform: uppercase;
+                  color: $title-color;
+                  margin-bottom: 4px;
+                }
+                &__description{
+                  height: 210px;
+                  font-family: "PT Sans";
+                  font-size: 16px;
+                  font-weight: 400;
+                  color: $description-color;
+                  margin-bottom: 20px;
+                  @media (max-width:1024px) {
+                    width: 300px;
+                    height: 189px;
+                    margin-bottom: 33px;
+                  }
+                  @media (max-width:768px) {
+                    width: 326px;
+                    height: 168px;
+                    margin-bottom: 64px;
+                  }
+                  @media (max-width:320px) {
+                    width: 244px;
+                    height: 168px;
+                    margin-bottom: 31px;
+                    overflow: hidden;
+                  }
+                }
+                &__old-price{
+                  font-family: "PT Sans";
+                  font-size: 16px;
+                  font-weight: 400;
+                  color: #989898;
+                  text-decoration:line-through;
+                  margin-bottom: 3px;
+                  @media (max-width:1024px) {
+                    margin-bottom: 8px;
+                  }
+                  @media (max-width:320px) {
+                    margin-bottom: 5px;
+                  }
+                }
+              }
+              .card-price{
+                width:282px;
+                height: 31px;
+                border: none;
+                border-top: 1px solid #FF3D3D;
+                padding-top: 5px;
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                @media (max-width:1024px) {
+                  width:300px;
+                }
+                @media (max-width:768px) {
+                  width:326px;
+                }
+                @media (max-width:320px) {
+                  width:244px;
+                }
+                &__amount {
+                  font-family: "PT Sans";
+                  font-size: 20px;
+                  font-weight: 400;
+                  color: #FF3D3D;
+                }
+                &__add {
+                  background-color: rgba(255, 61, 61, 0.0);
+                  border: none;
+                  .add-to-basket {
+                    width: 17px;
+                    height: 16px;
+                    cursor: pointer;
+                    filter: brightness(0) saturate(100%) invert(43%) sepia(79%) saturate(3971%) hue-rotate(338deg) brightness(100%) contrast(100%);
+                  }
+                }
+              }
+            }
+          }
+          &-image {
+            width:160px;
+            height: 160px;
+            @media (max-width:1024px) {
+              width: 164px;
+              height: 164px;
+            }
+            @media (max-width:768px) {
+              width: 175px;
+              height: 175px;
+            }
+            @media (max-width:320px) {
+              width: 169px;
+              height: 169px;
+            }
+          }
+          &-body {
+            &__title{
+              font-family: "PT Sans";
+              font-size: 18px;
+              font-weight: 400;
+              text-transform: uppercase;
+              color: $title-color;
+              margin-bottom: 6px;
+              @media (max-width:1024px) {
+                font-size: 20px;
+              }
+              @media (max-width:320px) {
+                margin-bottom: 5px;
+              }
+            }
+            &__description {
+              font-family: "PT Sans";
+              font-size: 14px;
+              font-weight: 400;
+              color: $description-color;
+              margin-bottom: 21px;
+              @media (max-width:1024px) {
+                font-size: 16px;
+              }
+              @media (max-width:320px) {
+                margin-bottom: 15px;
+              }
+            }
+          }
+          &-price {
+            width:242px;
+            height: 31px;
+            border: none;
+            border-top: 1px solid #8EACFC;
+            padding-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            @media (max-width:1024px) {
+              width: 296px;
+            }
+            @media (max-width:768px) {
+              width: 316px;
+            }
+            @media (max-width:320px) {
+              width: 244.5px;
+            }
+            &__amount {
+              font-family: "PT Sans";
+              font-size: 20px;
+              font-weight: 400;
+              color: #325AC0;
+            }
+            &__add {
+              background-color: rgba(255, 255, 255, 0.0);
+              border: none;
+              .add-to-basket {
+                width: 17px;
+                height: 16px;
+                cursor: pointer;
+                filter: brightness(0) saturate(100%) invert(35%) sepia(22%) saturate(3059%) hue-rotate(193deg) brightness(88%) contrast(93%);
+              }
+            }
+          }
+        }
+  
+    }
+  }
+}
